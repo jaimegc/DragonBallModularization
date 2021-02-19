@@ -73,6 +73,7 @@ object Versions {
         const val OK_HTTP = "4.9.1"
         const val RETROFIT = "2.9.0"
         const val RETROFIT_CONVERTER_MOSHI = "2.9.0"
+        const val RETROFIT_COROUTINES_ADAPTER = "0.9.2"
     }
 
     object Coroutines {
