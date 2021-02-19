@@ -1,4 +1,4 @@
-package com.jaimegc.dragonballmodularize.base.util
+package com.jaimegc.dragonballmodularize.core.base.util
 
 import kotlinx.coroutines.Dispatchers
 

@@ -1,6 +1,6 @@
 package com.jaimegc.dragonballmodularization.remote.utils
 
-import com.jaimegc.dragonballmodularize.base.util.NetworkCodes
+import com.jaimegc.dragonballmodularize.core.base.util.NetworkCodes
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import kotlinx.coroutines.CoroutineDispatcher

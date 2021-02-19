@@ -1,4 +1,4 @@
-package com.jaimegc.dragonballmodularize.base.ui
+package com.jaimegc.dragonballmodularize.core.base.ui
 
 import android.app.Activity
 import android.os.Bundle

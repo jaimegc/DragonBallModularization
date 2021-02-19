@@ -2,10 +2,10 @@ package com.jaimegc.dragonballmodularization.remote
 
 import com.jaimegc.dragonballmodularization.remote.utils.ResultWrapper
 import com.jaimegc.dragonballmodularization.remote.utils.safeApiCall
-import com.jaimegc.dragonballmodularize.base.domain.DataSource
-import com.jaimegc.dragonballmodularize.base.domain.FailureData
-import com.jaimegc.dragonballmodularize.base.domain.Resource
-import com.jaimegc.dragonballmodularize.base.util.SchedulerProvider
+import com.jaimegc.dragonballmodularize.core.base.domain.DataSource
+import com.jaimegc.dragonballmodularize.core.base.domain.FailureData
+import com.jaimegc.dragonballmodularize.core.base.domain.Resource
+import com.jaimegc.dragonballmodularize.core.base.util.SchedulerProvider
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

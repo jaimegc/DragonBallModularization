@@ -1,4 +1,4 @@
-package com.jaimegc.dragonballmodularize.base.domain
+package com.jaimegc.dragonballmodularize.core.base.data
 
 sealed class Resource<out T> {
 

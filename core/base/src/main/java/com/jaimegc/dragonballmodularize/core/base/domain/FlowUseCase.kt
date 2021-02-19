@@ -1,8 +1,8 @@
-package com.jaimegc.dragonballmodularize.base.model
+package com.jaimegc.dragonballmodularize.core.base.domain
 
-import com.jaimegc.dragonballmodularize.base.domain.FailureData
-import com.jaimegc.dragonballmodularize.base.domain.Resource
-import com.jaimegc.dragonballmodularize.base.util.NetworkCodes
+import com.jaimegc.dragonballmodularize.core.base.data.FailureData
+import com.jaimegc.dragonballmodularize.core.base.data.Resource
+import com.jaimegc.dragonballmodularize.core.base.util.NetworkCodes
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 
