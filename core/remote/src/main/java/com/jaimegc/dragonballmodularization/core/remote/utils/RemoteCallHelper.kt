@@ -1,4 +1,4 @@
-package com.jaimegc.dragonballmodularization.remote.utils
+package com.jaimegc.dragonballmodularization.core.remote.utils
 
 import com.jaimegc.dragonballmodularize.core.base.util.NetworkCodes
 import com.squareup.moshi.Moshi

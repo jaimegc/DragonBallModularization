@@ -1,4 +1,4 @@
-package com.jaimegc.dragonballmodularization.remote
+package com.jaimegc.dragonballmodularization.core.remote
 
 import org.junit.Test
 

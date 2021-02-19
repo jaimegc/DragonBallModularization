@@ -1,4 +1,4 @@
-package com.jaimegc.dragonballmodularization.remote.di
+package com.jaimegc.dragonballmodularization.core.remote.di
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi

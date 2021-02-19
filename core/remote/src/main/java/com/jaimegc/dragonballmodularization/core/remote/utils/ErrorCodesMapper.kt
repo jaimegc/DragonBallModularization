@@ -1,7 +1,7 @@
-package com.jaimegc.dragonballmodularization.remote.utils
+package com.jaimegc.dragonballmodularization.core.remote.utils
 
 import android.content.Context
-import com.jaimegc.dragonballmodularization.remote.R
+import com.jaimegc.dragonballmodularization.core.remote.R
 import com.jaimegc.dragonballmodularize.core.base.util.NetworkCodes
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject

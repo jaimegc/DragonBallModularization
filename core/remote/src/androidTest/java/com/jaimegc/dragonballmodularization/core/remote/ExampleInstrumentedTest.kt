@@ -1,4 +1,4 @@
-package com.jaimegc.dragonballmodularization.remote
+package com.jaimegc.dragonballmodularization.core.remote
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.jaimegc.dragonballmodularization.remote.test", appContext.packageName)
+        assertEquals("com.jaimegc.dragonballmodularization.core.remote.test", appContext.packageName)
     }
 }
