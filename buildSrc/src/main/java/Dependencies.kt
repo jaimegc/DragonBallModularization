@@ -161,11 +161,11 @@ object Dependencies {
 
 object Modules {
     const val APP = ":app"
-    const val REMOTE = ":core:remote"
-    const val LOCAL = ":core:local"
-    const val BASE = ":core:base"
-    const val NAVIGATOR = ":core:navigator"
-    const val UI_COMPONENTS = ":core:ui-components"
+    const val REMOTE = ":libraries:remote"
+    const val LOCAL = ":libraries:local"
+    const val BASE = ":libraries:base"
+    const val NAVIGATOR = ":libraries:navigator"
+    const val UI_COMPONENTS = ":libraries:ui-components"
 }
 
 fun DependencyHandler.gradle() {

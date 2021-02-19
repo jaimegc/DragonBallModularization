@@ -1,4 +1,5 @@
-include(":core:base")
-include(":core:remote")
+include(":libraries:navigator")
+include(":libraries:base")
+include(":libraries:remote")
 include(":app")
 rootProject.name = "DragonBall Modularization"
