@@ -91,7 +91,7 @@ object Versions {
         const val BARISTA = "3.7.0"
         const val COROUTINES = "1.4.2"
         const val FLOW_TEST_OBSERVER = "1.5.1"
-        const val JUNIT = "4.13.1"
+        const val JUNIT = "4.13.2"
         const val JUNIT_JUPITER = "5.7.1"
         const val KAKAO = "2.4.0"
         const val KOIN = Koin.KOIN
