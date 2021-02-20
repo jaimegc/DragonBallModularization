@@ -1,3 +1,4 @@
+include(":libraries:local")
 include(":libraries:navigator")
 include(":libraries:base")
 include(":libraries:remote")

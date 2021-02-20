@@ -45,13 +45,16 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    implementation(project(Modules.BASE))
     implementation(Dependencies.KOTLIN_JDK)
     implementation(Dependencies.ANDROID_APP_COMPAT)
-    implementation(Dependencies.ANDROID_CORE_KTX)
-    implementation(Dependencies.ANDROID_MATERIAL)
-    implementation(Dependencies.COROUTINES_CORE)
+    implementation(Dependencies.ANDROID_ROOM_KTX)
+    implementation(Dependencies.ANDROID_ROOM_RUNTIME)
+    implementation(Dependencies.KOIN)
+    implementation(Dependencies.SQUARE_MOSHI)
+    implementation(Dependencies.SQUARE_MOSHI_KOTLIN)
 
-    api(Dependencies.SQUARE_MOSHI)
+    kapt(Dependencies.ANDROID_ROOM_COMPILER)
 
     testImplementation(Dependencies.TEST_JUNIT)
     androidTestImplementation(Dependencies.ANDROID_ESPRESSO_CORE)
