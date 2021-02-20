@@ -11,9 +11,9 @@ object NavigationActions {
             navigate(context, it)
         }
 
-    fun navigateToAgentDetailsScreen(context: Context, agentId: String) =
+    fun navigateToDragonBallDetailsScreen(context: Context, dragonBallId: String) =
         internalIntent(context, "com.dragonballmodularization.dragon_ball_details.navigate")
-            .apply { putExtra(DRAGON_BALL_ID_KEY, agentId) }
+            .apply { putExtra(DRAGON_BALL_ID_KEY, dragonBallId) }
             .also {
                 navigate(context, it)
             }

@@ -9,7 +9,7 @@ import com.jaimegc.dragonballmodularization.libraries.local.entity.DragonBallInf
 @Dao
 interface DragonBallDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertAll(agents: List<DragonBallInfoEntity>)
+    suspend fun insertAll(dragonBallList: List<DragonBallInfoEntity>)
 
     @Query("SELECT * from dragonball_info")
     suspend fun getAll(): List<DragonBallInfoEntity>

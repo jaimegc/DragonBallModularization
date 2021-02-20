@@ -17,10 +17,10 @@ class DragonBallInfoConverter {
         } else null
 
     @TypeConverter
-    fun fromHomeResponse(agentInfo: DragonBallInfo?): String? {
+    fun fromHomeResponse(dragonBallInfo: DragonBallInfo?): String? {
         val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
         val typeCustom = Types.newParameterizedType(DragonBallInfo::class.java, DragonBallInfo::class.java)
 
-        return moshi.adapter<DragonBallInfo>(typeCustom).toJson(agentInfo)
+        return moshi.adapter<DragonBallInfo>(typeCustom).toJson(dragonBallInfo)
     }
 }

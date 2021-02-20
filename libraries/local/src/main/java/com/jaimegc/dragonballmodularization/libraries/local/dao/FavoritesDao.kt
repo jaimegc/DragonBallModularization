@@ -20,8 +20,8 @@ interface FavoritesDao {
 
     @Transaction
     suspend fun toggleDragonBallFavState(uuid: String): Boolean {
-        val agent = getDragonBall(uuid)
-        val toggleValue = agent?.isFav?.not() ?: false
+        val dragonBall = getDragonBall(uuid)
+        val toggleValue = dragonBall?.isFav?.not() ?: false
         updateDragonBallFav(uuid, toggleValue)
 
         return true
