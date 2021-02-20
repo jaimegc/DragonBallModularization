@@ -24,4 +24,9 @@ data class DragonBallInfo(
     @field:Json(name = "end_date") val endDate: String,
     @field:Json(name = "members") val members: Long,
     @field:Json(name = "rated") val rated: String,
-)
+    @field:Json(name = "isFav") var isFav: Boolean = false
+) {
+    fun toggleFav() {
+        this.isFav = isFav.not()
+    }
+}
