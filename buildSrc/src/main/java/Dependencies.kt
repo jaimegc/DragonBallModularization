@@ -56,6 +56,8 @@ object Dependencies {
         "androidx.navigation:navigation-ui:${Versions.Google.Androidx.NAVIGATION}"
     const val ANDROID_NAVIGATION_UI_KTX =
         "androidx.navigation:navigation-ui-ktx:${Versions.Google.Androidx.NAVIGATION}"
+    const val ANDROID_PALETTE =
+        "androidx.palette:palette:${Versions.Google.Androidx.PALETTE}"
     const val ANDROID_RECYCLERVIEW =
         "androidx.recyclerview:recyclerview:${Versions.Google.Androidx.RECYCLERVIEW}"
     const val ANDROID_TEST_FRAGMENT =
@@ -153,6 +155,10 @@ object Dependencies {
     const val ARROW_FX = "io.arrow-kt:arrow-fx:${Versions.Arrow.ARROW}"
     const val ARROW_FX_COROUTINES =
         "io.arrow-kt:arrow-fx-kotlinx-coroutines:${Versions.Arrow.ARROW}"
+
+    const val GLIDE = "com.github.bumptech.glide:glide:${Versions.Glide.GLIDE}"
+    const val GLIDE_COMPILER = "com.github.bumptech.glide:compiler:${Versions.Glide.GLIDE}"
+    const val GLIDE_OK_HTTP = "com.github.bumptech.glide:okhttp3-integration:${Versions.Glide.GLIDE}"
 
     const val OTHER_AIRBNB_LOTTIE = "com.airbnb.android:lottie:${Versions.Other.AIRBNB_LOTTIE}"
     const val OTHER_CHART = "com.github.PhilJay:MPAndroidChart:${Versions.Other.CHART}"

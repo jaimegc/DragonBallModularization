@@ -44,6 +44,7 @@ object Versions {
             const val LIFECYCLE_EXTENSIONS = "2.2.0"
             const val LIFECYCLE_LIVEDATA = "2.3.0"
             const val NAVIGATION = "2.3.3"
+            const val PALETTE = "1.0.0"
             const val RECYCLERVIEW = "1.2.0-beta01"
             const val TEST_FRAGMENT = "1.3.0"
             const val TEST_CORE = "1.3.0"
@@ -109,6 +110,10 @@ object Versions {
 
     object Arrow {
         const val ARROW = "0.10.5"
+    }
+
+    object Glide {
+        const val GLIDE = "4.8.0"
     }
 
     object Other {
