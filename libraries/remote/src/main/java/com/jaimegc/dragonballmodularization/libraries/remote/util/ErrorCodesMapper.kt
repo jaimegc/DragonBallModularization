@@ -1,4 +1,4 @@
-package com.jaimegc.dragonballmodularization.libraries.remote.utils
+package com.jaimegc.dragonballmodularization.libraries.remote.util
 
 import android.content.Context
 import com.jaimegc.dragonballmodularization.libraries.remote.R

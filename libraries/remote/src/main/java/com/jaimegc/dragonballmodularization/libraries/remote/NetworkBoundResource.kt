@@ -1,7 +1,7 @@
 package com.jaimegc.dragonballmodularization.libraries.remote
 
-import com.jaimegc.dragonballmodularization.libraries.remote.utils.ResultWrapper
-import com.jaimegc.dragonballmodularization.libraries.remote.utils.safeApiCall
+import com.jaimegc.dragonballmodularization.libraries.remote.util.ResultWrapper
+import com.jaimegc.dragonballmodularization.libraries.remote.util.safeApiCall
 import com.jaimegc.dragonballmodularization.libraries.base.data.DataSource
 import com.jaimegc.dragonballmodularization.libraries.base.data.FailureData
 import com.jaimegc.dragonballmodularization.libraries.base.data.Resource
