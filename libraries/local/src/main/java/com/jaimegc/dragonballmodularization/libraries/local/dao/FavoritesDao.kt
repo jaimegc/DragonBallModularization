@@ -9,20 +9,20 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface FavoritesDao {
 
-    @Query("SELECT * from dragonball_info WHERE isFav = 1")
+    @Query("SELECT * from dragonball_info WHERE isFav")
     fun getAllFavorites(): Flow<List<DragonBallInfoEntity>>
 
     @Query("SELECT * from dragonball_info WHERE id =:dragonBallId")
-    suspend fun getDragonBall(dragonBallId: String): DragonBallInfoEntity?
+    suspend fun getDragonBall(dragonBallId: Long): DragonBallInfoEntity?
 
     @Query("UPDATE  dragonball_info SET isFav =:newFavState WHERE id =:dragonBallId")
-    suspend fun updateDragonBallFav(dragonBallId: String, newFavState: Boolean)
+    suspend fun updateDragonBallFav(dragonBallId: Long, newFavState: Boolean)
 
     @Transaction
-    suspend fun toggleDragonBallFavState(uuid: String): Boolean {
-        val dragonBall = getDragonBall(uuid)
+    suspend fun toggleDragonBallFavState(dragonBallId: Long): Boolean {
+        val dragonBall = getDragonBall(dragonBallId)
         val toggleValue = dragonBall?.isFav?.not() ?: false
-        updateDragonBallFav(uuid, toggleValue)
+        updateDragonBallFav(dragonBallId, toggleValue)
 
         return true
     }
