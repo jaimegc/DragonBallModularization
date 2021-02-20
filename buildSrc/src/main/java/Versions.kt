@@ -44,6 +44,7 @@ object Versions {
             const val LIFECYCLE_EXTENSIONS = "2.2.0"
             const val LIFECYCLE_LIVEDATA = "2.3.0"
             const val NAVIGATION = "2.3.3"
+            const val PALETTE = "1.0.0"
             const val RECYCLERVIEW = "1.2.0-beta01"
             const val TEST_FRAGMENT = "1.3.0"
             const val TEST_CORE = "1.3.0"
@@ -73,6 +74,7 @@ object Versions {
         const val OK_HTTP = "4.9.1"
         const val RETROFIT = "2.9.0"
         const val RETROFIT_CONVERTER_MOSHI = "2.9.0"
+        const val RETROFIT_COROUTINES_ADAPTER = "0.9.2"
     }
 
     object Coroutines {
@@ -89,7 +91,7 @@ object Versions {
         const val BARISTA = "3.7.0"
         const val COROUTINES = "1.4.2"
         const val FLOW_TEST_OBSERVER = "1.5.1"
-        const val JUNIT = "4.13.1"
+        const val JUNIT = "4.13.2"
         const val JUNIT_JUPITER = "5.7.1"
         const val KAKAO = "2.4.0"
         const val KOIN = Koin.KOIN
@@ -108,6 +110,10 @@ object Versions {
 
     object Arrow {
         const val ARROW = "0.10.5"
+    }
+
+    object Glide {
+        const val GLIDE = "4.8.0"
     }
 
     object Other {
