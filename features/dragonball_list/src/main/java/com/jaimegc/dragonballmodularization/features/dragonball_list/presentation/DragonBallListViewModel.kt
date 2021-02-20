@@ -18,10 +18,10 @@ internal class DragonBallListViewModel(private val useCase: DragonBallListUseCas
     val dragonBallStateFlow: StateFlow<Resource<List<DragonBallInfo>>> = _dragonBallStateFlow
 
     init {
-        getPopularAgents()
+        getDragonBall()
     }
 
-    private fun getPopularAgents() {
+    private fun getDragonBall() {
         viewModelScope.launch {
             useCase()
                 .collect {

@@ -19,9 +19,9 @@ class DragonBallRecyclerAdapter(
         return DragonBallViewHolder(binding)
     }
 
-    fun addDragonBalls(newDragonBallsList: List<DragonBallInfo>) {
+    fun addDragonBallList(newDragonBallList: List<DragonBallInfo>) {
         dragonBallList.clear()
-        dragonBallList.addAll(newDragonBallsList)
+        dragonBallList.addAll(newDragonBallList)
 
         notifyDataSetChanged()
     }

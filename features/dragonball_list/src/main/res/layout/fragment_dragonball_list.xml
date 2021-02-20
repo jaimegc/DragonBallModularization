@@ -6,7 +6,7 @@
     tools:context=".presentation.DragonBallListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvAgentsList"
+        android:id="@+id/rvDragonBallList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

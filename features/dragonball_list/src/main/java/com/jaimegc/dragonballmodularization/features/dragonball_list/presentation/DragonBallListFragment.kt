@@ -34,7 +34,7 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
 
     private val navigator: NavigationActions by inject()
 
-    private val agentsAdapter by lazy {
+    private val dragonBallAdapter by lazy {
         DragonBallRecyclerAdapter(dragonBallCellActionsDelegate = dragonBallCellViewModel)
     }
 
@@ -42,10 +42,9 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
         get() = FragmentDragonballListBinding::inflate
 
     override fun setup() {
-        // Setup views
-        with(binding.rvAgentsList) {
+        with(binding.rvDragonBallList) {
             layoutManager = GridLayoutManager(activity, 2)
-            adapter = agentsAdapter
+            adapter = dragonBallAdapter
         }
 
         bindViewModels()
@@ -57,7 +56,7 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
                 when (it) {
                     is Resource.Loading -> {
                         binding.progressView.visible()
-                        binding.rvAgentsList.gone()
+                        binding.rvDragonBallList.gone()
                     }
                     is Resource.Success -> {
                         fillDragonBallWithData(it.data)
@@ -83,7 +82,7 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
 
     private fun fillDragonBallWithData(list: List<DragonBallInfo>?) {
         binding.progressView.gone()
-        binding.rvAgentsList.visible()
-        agentsAdapter.addDragonBalls(list ?: mutableListOf())
+        binding.rvDragonBallList.visible()
+        dragonBallAdapter.addDragonBallList(list ?: mutableListOf())
     }
 }

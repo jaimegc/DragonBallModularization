@@ -4,6 +4,6 @@ import com.jaimegc.dragonballmodularization.libraries.base.data.DragonBallRespon
 import retrofit2.http.GET
 
 interface DragonBallListApi {
-    @GET("agents")
+    @GET("search/anime?q=dragonball")
     suspend fun getDragonBall(): DragonBallResponse
 }
