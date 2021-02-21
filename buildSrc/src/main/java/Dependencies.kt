@@ -22,6 +22,8 @@ object Dependencies {
 
     const val KOTLIN_JDK = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.Kotlin.JDK}"
 
+    const val ANDROID_ACTIVITY_KTX =
+        "androidx.activity:activity-ktx:${Versions.Google.Androidx.ACTIVITY_KTX}"
     const val ANDROID_APP_COMPAT =
         "androidx.appcompat:appcompat:${Versions.Google.Androidx.APP_COMPAT}"
     const val ANDROID_CONSTRAINT_LAYOUT =
