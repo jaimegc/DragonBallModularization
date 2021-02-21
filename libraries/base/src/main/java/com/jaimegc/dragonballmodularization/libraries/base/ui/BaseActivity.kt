@@ -1,11 +1,12 @@
 package com.jaimegc.dragonballmodularization.libraries.base.ui
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseActivity<T : ViewBinding> : Activity() {
+
+abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
 
     private var _binding: ViewBinding? = null
     abstract val bindingInflater: (LayoutInflater) -> T

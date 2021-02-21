@@ -35,6 +35,7 @@ object Versions {
 
     object Google {
         object Androidx {
+            const val ACTIVITY_KTX = "1.2.0"
             const val APP_COMPAT = "1.2.0"
             const val CONSTRAINT_LAYOUT = "2.0.4"
             const val CORE_KTX = "1.3.2"

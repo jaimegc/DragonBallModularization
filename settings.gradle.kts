@@ -1,3 +1,6 @@
+include(":features:dragonball_details")
+include(":features:dragonball_favorites")
+include(":features:dragonball_list")
 include(":libraries:ui-components")
 include(":libraries:local")
 include(":libraries:navigator")

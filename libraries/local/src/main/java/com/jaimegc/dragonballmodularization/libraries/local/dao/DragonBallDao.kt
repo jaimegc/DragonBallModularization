@@ -15,5 +15,5 @@ interface DragonBallDao {
     suspend fun getAll(): List<DragonBallInfoEntity>
 
     @Query("SELECT * from dragonball_info WHERE id =:dragonBallId")
-    suspend fun getDragonBall(dragonBallId: String): DragonBallInfoEntity?
+    suspend fun getDragonBall(dragonBallId: Long): DragonBallInfoEntity?
 }

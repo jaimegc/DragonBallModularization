@@ -47,6 +47,7 @@ dependencies {
 
     implementation(Dependencies.KOTLIN_JDK)
     implementation(Dependencies.ANDROID_APP_COMPAT)
+    implementation(Dependencies.ANDROID_ACTIVITY_KTX)
     implementation(Dependencies.ANDROID_CORE_KTX)
     implementation(Dependencies.ANDROID_MATERIAL)
     implementation(Dependencies.COROUTINES_CORE)

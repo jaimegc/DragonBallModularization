@@ -6,13 +6,11 @@ import com.jaimegc.dragonballmodularization.libraries.base.data.DataSource
 import com.jaimegc.dragonballmodularization.libraries.base.data.FailureData
 import com.jaimegc.dragonballmodularization.libraries.base.data.Resource
 import com.jaimegc.dragonballmodularization.libraries.base.util.SchedulerProvider
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 abstract class NetworkBoundResource<T>(private val schedulerProvider: SchedulerProvider) {
 
-    @ExperimentalCoroutinesApi
     fun asFlow(): Flow<Resource<T>> = flow {
         // check if should fetch data from remote or not
         if (shouldFetch()) {
