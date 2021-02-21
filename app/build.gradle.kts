@@ -5,6 +5,10 @@ plugins {
     id("name.remal.check-dependency-updates")
 }
 
+apply {
+    from("https://raw.githubusercontent.com/JakeWharton/SdkSearch/master/gradle/projectDependencyGraph.gradle")
+}
+
 android {
     compileSdkVersion(Versions.Android.COMPILE_SDK)
     buildToolsVersion = Versions.Android.BUILD_TOOLS
