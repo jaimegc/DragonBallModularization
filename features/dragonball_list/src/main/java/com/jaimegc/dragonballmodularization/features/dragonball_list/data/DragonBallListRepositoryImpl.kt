@@ -15,11 +15,10 @@ class DragonBallListRepositoryImpl(
     private val localSource: DragonBallListLocalSource,
     private val schedulerProvider: SchedulerProvider
 ) : DragonBallListRepository {
-    override suspend fun getDragonBall(): Flow<Resource<List<DragonBallInfo>>> {
-        return object : NetworkBoundResource<List<DragonBallInfo>>(schedulerProvider) {
-            override suspend fun remoteFetch(): List<DragonBallInfo> {
-                return remoteSource.getDragonBall()
-            }
+    override suspend fun getDragonBall(): Flow<Resource<List<DragonBallInfo>>> =
+        object : NetworkBoundResource<List<DragonBallInfo>>(schedulerProvider) {
+            override suspend fun remoteFetch(): List<DragonBallInfo> =
+                remoteSource.getDragonBall()
 
             override suspend fun saveFetchResult(data: List<DragonBallInfo>) {
                 localSource.saveDragonBallList(data)
@@ -31,7 +30,6 @@ class DragonBallListRepositoryImpl(
 
             override fun shouldFetchWithLocalData() = true
         }.asFlow()
-    }
 }
 
 private fun DragonBallInfoEntity.toDomain(isFav: Boolean): DragonBallInfo =

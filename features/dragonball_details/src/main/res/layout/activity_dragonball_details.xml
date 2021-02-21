@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:fillViewport="true"
+    tools:background="@color/blue_grey_900">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivBackground"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/pink_rounded_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/dark_blue_bg"
+            android:gravity="center_vertical"
+            android:drawablePadding="2dp"
+            android:padding="8dp"
+            android:text="@string/back_str"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/tvDragonBallName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:letterSpacing="0.2"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/ivBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivBackground"
+            app:layout_constraintVertical_bias="0.6"
+            tools:text="OMEN" />
+
+        <TextView
+            android:id="@+id/tvRoleType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/dark_blue_bg"
+            android:padding="8dp"
+            android:textColor="@color/grey_200"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/tvDragonBallName"
+            app:layout_constraintTop_toBottomOf="@id/tvDragonBallName"
+            tools:text="Controller" />
+
+        <ImageView
+            android:id="@+id/ivDragonBallPic"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="50dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@id/ivBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/dragonball_test" />
+
+        <ImageButton
+            android:id="@+id/btnFav"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/fav_bg"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline"
+            app:srcCompat="@drawable/ic_unselected_fav_24"
+            tools:ignore="ContentDescription,UnusedAttribute" />
+
+        <TextView
+            android:id="@+id/tvBiographyLabel"
+            style="@style/dragonball_bold_section_titles"
+            android:text="@string/biography_str"
+            app:layout_constraintStart_toStartOf="@id/tvDragonBallName"
+            app:layout_constraintTop_toBottomOf="@id/ivBackground" />
+
+        <TextView
+            android:id="@+id/tvBiographyText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="@string/biography_str"
+            android:textColor="@color/grey_200"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvBiographyLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvBiographyLabel"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus massa a nibh placerat tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin mollis mi sed massa posuere, ac vestibulum ligula suscipit. In in est lectus. Duis sodales sed elit eu feugiat." />
+
+        <TextView
+            android:id="@+id/tvSkillsLabel"
+            style="@style/dragonball_bold_section_titles"
+            android:text="@string/special_abilities_str"
+            app:layout_constraintStart_toStartOf="@id/tvBiographyLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvBiographyText" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/viewsGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="btnFav,tvBiographyLabel,tvBiographyText,tvSkillsLabel,tvDragonBallName,ivBackground,ivDragonBallPic,tvRoleType"
+            tools:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="250dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

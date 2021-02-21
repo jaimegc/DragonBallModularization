@@ -54,12 +54,12 @@ dependencies {
     implementation(Dependencies.KOTLIN_JDK)
     implementation(Dependencies.ANDROID_APP_COMPAT)
     implementation(Dependencies.ANDROID_CORE_KTX)
+    implementation(Dependencies.ANDROID_LIFECYCLE_LIVEDATA_KTX)
     implementation(Dependencies.ANDROID_MATERIAL)
     implementation(Dependencies.COROUTINES_CORE)
     implementation(Dependencies.KOIN)
     implementation(Dependencies.KOIN_CORE)
     implementation(Dependencies.KOIN_VIEWMODEL)
-    implementation(Dependencies.ANDROID_LIFECYCLE_LIVEDATA_KTX)
 
     testImplementation(Dependencies.TEST_JUNIT)
     androidTestImplementation(Dependencies.ANDROID_ESPRESSO_CORE)

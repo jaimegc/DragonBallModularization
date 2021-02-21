@@ -9,7 +9,4 @@ class FavoritesDragonBallLocalDataSourceImpl(
 ) : FavoritesDragonBallLocalDataSource {
     override suspend fun getFavoriteDragonBall(): Flow<List<DragonBallInfoEntity>> =
         favoritesDao.getAllFavorites()
-
-    override suspend fun toggleFavoriteDragonBallFav(dragonBallId: Long): Boolean =
-        favoritesDao.toggleDragonBallFavState(dragonBallId)
 }
