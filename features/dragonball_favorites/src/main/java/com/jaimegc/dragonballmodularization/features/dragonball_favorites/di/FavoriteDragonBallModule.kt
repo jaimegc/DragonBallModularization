@@ -5,13 +5,10 @@ import com.jaimegc.dragonballmodularization.features.dragonball_favorites.data.d
 import com.jaimegc.dragonballmodularization.features.dragonball_favorites.data.datasource.local.FavoritesDragonBallLocalDataSourceImpl
 import com.jaimegc.dragonballmodularization.features.dragonball_favorites.domain.repository.FavoriteDragonBallRepository
 import com.jaimegc.dragonballmodularization.features.dragonball_favorites.domain.usecase.FavoriteDragonBallInquiryUseCase
-import com.jaimegc.dragonballmodularization.features.dragonball_favorites.domain.usecase.FavoriteDragonBallToggleUseCase
 import com.jaimegc.dragonballmodularization.features.dragonball_favorites.presentation.FavoriteDragonBallViewModel
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-@ExperimentalCoroutinesApi
 fun getFavoriteDragonBallModules() = module {
 
     factory<FavoritesDragonBallLocalDataSource> {
@@ -19,17 +16,14 @@ fun getFavoriteDragonBallModules() = module {
     }
 
     single<FavoriteDragonBallRepository> {
-        FavoriteDragonBallRepositoryImpl(get(), get())
+        FavoriteDragonBallRepositoryImpl(get())
     }
 
     factory {
         FavoriteDragonBallInquiryUseCase(get())
     }
-    factory {
-        FavoriteDragonBallToggleUseCase(get())
-    }
 
     viewModel {
-        FavoriteDragonBallViewModel(get(), get())
+        FavoriteDragonBallViewModel(get())
     }
 }

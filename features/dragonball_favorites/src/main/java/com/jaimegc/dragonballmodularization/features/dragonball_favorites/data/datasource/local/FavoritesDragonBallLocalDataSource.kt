@@ -5,5 +5,4 @@ import kotlinx.coroutines.flow.Flow
 
 interface FavoritesDragonBallLocalDataSource {
     suspend fun getFavoriteDragonBall(): Flow<List<DragonBallInfoEntity>>
-    suspend fun toggleFavoriteDragonBallFav(dragonBallId: Long): Boolean
 }
