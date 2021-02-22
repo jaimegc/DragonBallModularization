@@ -1,0 +1,4 @@
+<resources>
+    <string name="home_tab_list">List</string>
+    <string name="home_tab_favorites">Favorites</string>
+</resources>
