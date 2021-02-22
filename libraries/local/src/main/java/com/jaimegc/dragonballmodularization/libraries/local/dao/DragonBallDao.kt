@@ -11,7 +11,7 @@ interface DragonBallDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAll(dragonBallList: List<DragonBallInfoEntity>)
 
-    @Query("SELECT * from dragonball_info")
+    @Query("SELECT * from dragonball_info ORDER BY startDate DESC")
     suspend fun getAll(): List<DragonBallInfoEntity>
 
     @Query("SELECT * from dragonball_info WHERE id =:dragonBallId")
