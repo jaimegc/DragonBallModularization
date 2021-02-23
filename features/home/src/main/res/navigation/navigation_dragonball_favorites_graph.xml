@@ -2,12 +2,20 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation_characters_favorites_graph"
-    app:startDestination="@+id/characters_favorites_fragment"
+    android:id="@+id/navigation_dragonball_favorites_graph"
+    app:startDestination="@+id/dragonball_favorites_fragment"
     tools:ignore="UnusedNavigation">
     <fragment
-        android:id="@+id/characters_favorites_fragment"
+        android:id="@+id/dragonball_favorites_fragment"
         android:name="com.jaimegc.dragonballmodularization.features.dragonball_favorites.presentation.FavoriteDragonBallFragment"
         android:label="Favorites">
+    </fragment>
+    <fragment
+        android:id="@+id/dragonball_details_fragment"
+        android:name="com.jaimegc.dragonballmodularization.features.dragonball_details.presentation.DragonBallDetailsFragment">
+        <argument
+            android:name="dragonball_id"
+            app:argType="long" />
+        <deepLink app:uri="dragonBall://DragonBallDetailsFragment"/>
     </fragment>
 </navigation>

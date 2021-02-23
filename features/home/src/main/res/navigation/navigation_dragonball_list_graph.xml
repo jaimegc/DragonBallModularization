@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation_characters_list_graph"
-    app:startDestination="@+id/characters_list_fragment"
+    android:id="@+id/navigation_dragonball_list_graph"
+    app:startDestination="@+id/dragonball_list_fragment"
     tools:ignore="UnusedNavigation,UnusedIds">
     <fragment
-        android:id="@+id/characters_list_fragment"
+        android:id="@+id/dragonball_list_fragment"
         android:name="com.jaimegc.dragonballmodularization.features.dragonball_list.presentation.DragonBallListFragment"
         android:label="List">
         <!-- <action
