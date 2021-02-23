@@ -168,12 +168,20 @@ object Dependencies {
 }
 
 object Modules {
-    const val APP = ":app"
-    const val REMOTE = ":libraries:remote"
-    const val LOCAL = ":libraries:local"
-    const val BASE = ":libraries:base"
-    const val NAVIGATOR = ":libraries:navigator"
-    const val UI_COMPONENTS = ":libraries:ui-components"
+    object Libraries {
+        const val REMOTE = ":libraries:remote"
+        const val LOCAL = ":libraries:local"
+        const val BASE = ":libraries:base"
+        const val NAVIGATOR = ":libraries:navigator"
+        const val UI_COMPONENTS = ":libraries:ui-components"
+    }
+
+    object Features {
+        const val HOME = ":features:home"
+        const val DRAGONBALL_LIST = ":features:dragonball_list"
+        const val DRAGONBALL_FAVORITES = ":features:dragonball_favorites"
+        const val DRAGONBALL_DETAILS = ":features:dragonball_details"
+    }
 }
 
 fun DependencyHandler.gradle() {
@@ -200,7 +208,7 @@ fun DependencyHandler.google() {
     implementation(Dependencies.ANDROID_NAVIGATION_FRAGMENT_KTX)
     implementation(Dependencies.ANDROID_NAVIGATION_RUNTIME)
     implementation(Dependencies.ANDROID_NAVIGATION_RUNTIME_KTX)
-    implementation(Dependencies.ANDROID_NAVIGATION_UI)
+    implementation(Dependencies.ANDROID_NAVIGATION_FRAGMENT_KTX)
     implementation(Dependencies.ANDROID_NAVIGATION_UI_KTX)
     implementation(Dependencies.ANDROID_RECYCLERVIEW)
     implementation(Dependencies.ANDROID_ROOM_KTX)
