@@ -1,13 +1,10 @@
 package com.jaimegc.dragonballmodularization.features.dragonball_details.presentation
 
-import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageButton
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.asLiveData
-import androidx.palette.graphics.Palette
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
@@ -121,21 +118,6 @@ class DragonBallDetailsActivity : BaseActivity<ActivityDragonballDetailsBinding>
                     dataSource: DataSource?,
                     isFirstResource: Boolean
                 ): Boolean {
-                    resource?.let { bitmap ->
-                        Palette.from(bitmap).generate {
-                            // Use the dominant color in image
-                            val dominantColor =
-                                it?.getMutedColor(
-                                    ContextCompat.getColor(
-                                        this@DragonBallDetailsActivity,
-                                        R.color.white
-                                    )
-                                )
-                                    ?: 0x000
-                            binding.ivBackground.backgroundTintList =
-                                ColorStateList.valueOf(dominantColor)
-                        }
-                    }
                     return false
                 }
             }).into(binding.ivDragonBallPic)

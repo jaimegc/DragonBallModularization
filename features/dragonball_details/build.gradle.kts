@@ -57,6 +57,8 @@ dependencies {
     implementation(Dependencies.ANDROID_CORE_KTX)
     implementation(Dependencies.ANDROID_LIFECYCLE_LIVEDATA_KTX)
     implementation(Dependencies.ANDROID_MATERIAL)
+    implementation(Dependencies.ANDROID_NAVIGATION_FRAGMENT_KTX)
+    implementation(Dependencies.ANDROID_NAVIGATION_UI_KTX)
     implementation(Dependencies.ANDROID_PALETTE)
     implementation(Dependencies.COROUTINES_CORE)
     implementation(Dependencies.GLIDE)
