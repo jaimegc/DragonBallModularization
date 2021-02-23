@@ -15,7 +15,6 @@ import com.jaimegc.dragonballmodularization.libraries.ui_components.util.gone
 import com.jaimegc.dragonballmodularization.libraries.ui_components.util.showErrorDialog
 import com.jaimegc.dragonballmodularization.libraries.ui_components.util.visible
 import com.jaimegc.dragonballmodularization.libraries.ui_components.viewmodel.DragonBallCellViewModel
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FavoriteDragonBallFragment : BaseFragment<FragmentFavoriteDragonballBinding>() {
@@ -26,7 +25,6 @@ class FavoriteDragonBallFragment : BaseFragment<FragmentFavoriteDragonballBindin
 
     private val dragonBallCellViewModel: DragonBallCellViewModel by viewModel()
     private val favoriteDragonBallViewModel: FavoriteDragonBallViewModel by viewModel()
-    private val navigator: NavigationActions by inject()
 
     private val dragonBallAdapter by lazy {
         DragonBallRecyclerAdapter(dragonBallCellActionsDelegate = dragonBallCellViewModel)
@@ -76,7 +74,7 @@ class FavoriteDragonBallFragment : BaseFragment<FragmentFavoriteDragonballBindin
             }
         }
         dragonBallCellViewModel.openDragonBallDetails.observe(this) {
-            navigator.navigateToDragonBallDetailsScreen(requireContext(), dragonBallId = it.id)
+            NavigationActions.navigateToDragonBallDetailsScreen(requireContext(), dragonBallId = it.id)
         }
     }
 
