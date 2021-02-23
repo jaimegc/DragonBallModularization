@@ -45,7 +45,8 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(project(Modules.BASE))
+    implementation(project(Modules.Libraries.BASE))
+
     implementation(Dependencies.KOTLIN_JDK)
     implementation(Dependencies.ANDROID_APP_COMPAT)
     implementation(Dependencies.ANDROID_ROOM_KTX)

@@ -57,17 +57,24 @@ android {
     packagingOptions {
         exclude("META-INF/AL2.0")
         exclude("META-INF/LGPL2.1")
+        exclude("META-INF/*.kotlin_module")
     }
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    implementation(project(Modules.Libraries.LOCAL))
+    implementation(project(Modules.Libraries.NAVIGATOR))
+    implementation(project(Modules.Libraries.REMOTE))
+    implementation(project(Modules.Features.HOME))
+    implementation(project(Modules.Features.DRAGONBALL_LIST))
+    implementation(project(Modules.Features.DRAGONBALL_FAVORITES))
+    implementation(project(Modules.Features.DRAGONBALL_DETAILS))
+
     kotlin()
     google()
-    square()
     coroutines()
     koin()
-    arrow()
     test()
 }

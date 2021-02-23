@@ -17,5 +17,6 @@ class DragonBallListLocalSourceImpl(
 private fun DragonBallInfo.toEntity(): DragonBallInfoEntity =
     DragonBallInfoEntity(
         id = id,
+        startDate = this.startDate,
         data = this
     )

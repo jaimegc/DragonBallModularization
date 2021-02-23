@@ -45,12 +45,15 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(project(Modules.BASE))
+    implementation(project(Modules.Libraries.BASE))
+
     implementation(Dependencies.KOTLIN_JDK)
     implementation(Dependencies.ANDROID_APP_COMPAT)
     implementation(Dependencies.ANDROID_CONSTRAINT_LAYOUT)
     implementation(Dependencies.ANDROID_CORE_KTX)
     implementation(Dependencies.ANDROID_MATERIAL)
+    implementation(Dependencies.ANDROID_NAVIGATION_FRAGMENT_KTX)
+    implementation(Dependencies.ANDROID_NAVIGATION_UI_KTX)
     implementation(Dependencies.ANDROID_PALETTE)
     implementation(Dependencies.GLIDE)
     implementation(Dependencies.GLIDE_OK_HTTP)
