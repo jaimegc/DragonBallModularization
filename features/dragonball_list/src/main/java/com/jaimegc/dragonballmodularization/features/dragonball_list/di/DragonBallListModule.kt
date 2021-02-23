@@ -8,6 +8,7 @@ import com.jaimegc.dragonballmodularization.features.dragonball_list.data.dataso
 import com.jaimegc.dragonballmodularization.features.dragonball_list.data.datasources.remote.DragonBallListRemoteSourceImpl
 import com.jaimegc.dragonballmodularization.features.dragonball_list.domain.repository.DragonBallListRepository
 import com.jaimegc.dragonballmodularization.features.dragonball_list.domain.usecase.DragonBallListUseCase
+import com.jaimegc.dragonballmodularization.features.dragonball_list.presentation.CacheStateSharedViewModel
 import com.jaimegc.dragonballmodularization.features.dragonball_list.presentation.DragonBallListViewModel
 import com.jaimegc.dragonballmodularization.libraries.base.util.ApplicationDispatchersProvider
 import com.jaimegc.dragonballmodularization.libraries.base.util.SchedulerProvider
@@ -45,5 +46,9 @@ fun getDragonBallListModule() = module {
 
     viewModel {
         DragonBallListViewModel(get())
+    }
+
+    viewModel {
+        CacheStateSharedViewModel()
     }
 }
