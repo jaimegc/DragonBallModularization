@@ -35,19 +35,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun setupBottomNavigationBar() {
-        val navController = binding.bottomNavigation.setupWithNavController(
+        binding.bottomNavigation.setupWithNavController(
             navGraphIds = navGraphIds,
             fragmentManager = childFragmentManager,
             containerId = R.id.nav_host_container,
             intent = requireActivity().intent
         )
-
-        /*navController.observe(
-            viewLifecycleOwner,
-            Observer {
-                viewModel.navigationControllerChanged(it)
-                NavigationUI.setupActionBarWithNavController(requireCompatActivity(), it)
-            }
-        )*/
     }
 }
