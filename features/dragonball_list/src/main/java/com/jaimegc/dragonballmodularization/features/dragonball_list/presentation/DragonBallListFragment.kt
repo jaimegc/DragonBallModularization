@@ -2,6 +2,7 @@ package com.jaimegc.dragonballmodularization.features.dragonball_list.presentati
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.GridLayoutManager
 import com.jaimegc.dragonballmodularization.features.dragonball_list.R
@@ -72,7 +73,9 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
             }
 
         dragonBallCellViewModel.openDragonBallDetails.observe(this) {
-            NavigationActions.navigateToDragonBallDetailsScreen(requireContext(), dragonBallId = it.id)
+            NavigationActions.navigateToDragonBallDetailsScreen(
+                context = requireContext(), dragonBallId = it.id, noAnimation = false
+            )
         }
     }
 
@@ -80,5 +83,11 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
         binding.progressView.gone()
         binding.rvDragonBallList.visible()
         dragonBallAdapter.addDragonBallList(list ?: mutableListOf())
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        activity?.title = getString(R.string.toolbar_modularization_title)
     }
 }

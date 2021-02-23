@@ -2,6 +2,7 @@ package com.jaimegc.dragonballmodularization.features.dragonball_details.present
 
 import android.graphics.Bitmap
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import androidx.lifecycle.asLiveData
@@ -30,6 +31,8 @@ class DragonBallDetailsActivity : BaseActivity<ActivityDragonballDetailsBinding>
     override fun setup() {
         attachActions()
 
+        title = getString(R.string.toolbar_details_title)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         bindViewModels(intent.extras?.getLong(ActionKeys.DRAGONBALL_ID_KEY))
     }
 
@@ -127,5 +130,15 @@ class DragonBallDetailsActivity : BaseActivity<ActivityDragonballDetailsBinding>
         R.drawable.iv_selected_fav
     } else {
         R.drawable.ic_unselected_fav_24
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

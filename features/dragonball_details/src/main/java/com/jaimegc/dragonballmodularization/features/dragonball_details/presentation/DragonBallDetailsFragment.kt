@@ -1,10 +1,13 @@
 package com.jaimegc.dragonballmodularization.features.dragonball_details.presentation
 
 import android.graphics.Bitmap
+import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.load.DataSource
@@ -33,6 +36,11 @@ class DragonBallDetailsFragment : BaseFragment<ActivityDragonballDetailsBinding>
         attachActions()
 
         bindViewModels(args.dragonBallId)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     private fun attachActions() {
@@ -129,5 +137,27 @@ class DragonBallDetailsFragment : BaseFragment<ActivityDragonballDetailsBinding>
         R.drawable.iv_selected_fav
     } else {
         R.drawable.ic_unselected_fav_24
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                activity?.onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        activity?.title = getString(R.string.toolbar_modularization_title)
+        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        super.onDestroy()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        activity?.title = getString(R.string.toolbar_details_title)
+        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }
