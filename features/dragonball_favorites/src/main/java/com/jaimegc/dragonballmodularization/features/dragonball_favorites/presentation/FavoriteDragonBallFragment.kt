@@ -1,15 +1,16 @@
 package com.jaimegc.dragonballmodularization.features.dragonball_favorites.presentation
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.asLiveData
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.jaimegc.dragonballmodularization.features.dragonball_favorites.R
 import com.jaimegc.dragonballmodularization.features.dragonball_favorites.databinding.FragmentFavoriteDragonballBinding
 import com.jaimegc.dragonballmodularization.libraries.base.data.DragonBallInfo
 import com.jaimegc.dragonballmodularization.libraries.base.data.Resource
 import com.jaimegc.dragonballmodularization.libraries.base.ui.BaseFragment
-import com.jaimegc.dragonballmodularization.libraries.navigator.NavigationActions
 import com.jaimegc.dragonballmodularization.libraries.ui_components.adapter.DragonBallRecyclerAdapter
 import com.jaimegc.dragonballmodularization.libraries.ui_components.util.gone
 import com.jaimegc.dragonballmodularization.libraries.ui_components.util.showErrorDialog
@@ -74,7 +75,8 @@ class FavoriteDragonBallFragment : BaseFragment<FragmentFavoriteDragonballBindin
             }
         }
         dragonBallCellViewModel.openDragonBallDetails.observe(this) {
-            NavigationActions.navigateToDragonBallDetailsScreen(requireContext(), dragonBallId = it.id)
+            val uri = Uri.parse("dragonBall://DragonBallDetailsFragment")
+            findNavController().navigate(uri)
         }
     }
 
