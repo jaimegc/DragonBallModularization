@@ -13,7 +13,7 @@ import com.jaimegc.dragonballmodularization.libraries.ui_components.R
  * @since 08/13/2019
  */
 fun createDefaultNavOptions(destination: Int) = NavOptions.Builder()
-    .setLaunchSingleTop(false)
+    .setLaunchSingleTop(true)
     .setPopUpTo(destination, false)
     .setEnterAnim(R.anim.nav_default_enter_anim)
     .setExitAnim(R.anim.nav_default_exit_anim)
