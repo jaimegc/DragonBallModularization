@@ -2,6 +2,7 @@ package com.jaimegc.dragonballmodularization.features.dragonball_list.presentati
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.GridLayoutManager
 import com.jaimegc.dragonballmodularization.features.dragonball_list.R
@@ -16,7 +17,6 @@ import com.jaimegc.dragonballmodularization.libraries.ui_components.util.gone
 import com.jaimegc.dragonballmodularization.libraries.ui_components.util.showErrorDialog
 import com.jaimegc.dragonballmodularization.libraries.ui_components.util.visible
 import com.jaimegc.dragonballmodularization.libraries.ui_components.viewmodel.DragonBallCellViewModel
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -32,8 +32,6 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
         requireActivity().getViewModel<CacheStateSharedViewModel>()
     }
 
-    private val navigator: NavigationActions by inject()
-
     private val dragonBallAdapter by lazy {
         DragonBallRecyclerAdapter(dragonBallCellActionsDelegate = dragonBallCellViewModel)
     }
@@ -43,7 +41,7 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
 
     override fun setup() {
         with(binding.rvDragonBallList) {
-            layoutManager = GridLayoutManager(activity, 2)
+            layoutManager = GridLayoutManager(activity, 1)
             adapter = dragonBallAdapter
         }
 
@@ -65,7 +63,6 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
                         )
                     }
                     is Resource.Failure -> {
-                        // Show error toast & hide progress
                         binding.progressView.gone()
                         requireContext().showErrorDialog(
                             it.failureData.message ?: getString(R.string.generic_error)
@@ -76,7 +73,9 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
             }
 
         dragonBallCellViewModel.openDragonBallDetails.observe(this) {
-            navigator.navigateToDragonBallDetailsScreen(requireContext(), dragonBallId = it.id)
+            NavigationActions.navigateToDragonBallDetailsScreen(
+                context = requireContext(), dragonBallId = it.id, noAnimation = false
+            )
         }
     }
 
@@ -84,5 +83,11 @@ class DragonBallListFragment : BaseFragment<FragmentDragonballListBinding>() {
         binding.progressView.gone()
         binding.rvDragonBallList.visible()
         dragonBallAdapter.addDragonBallList(list ?: mutableListOf())
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        activity?.title = getString(R.string.toolbar_modularization_title)
     }
 }

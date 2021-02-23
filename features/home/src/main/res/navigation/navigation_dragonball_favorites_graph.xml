@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_dragonball_favorites_graph"
+    app:startDestination="@+id/dragonball_favorites_fragment"
+    tools:ignore="UnusedNavigation">
+    <fragment
+        android:id="@+id/dragonball_favorites_fragment"
+        android:name="com.jaimegc.dragonballmodularization.features.dragonball_favorites.presentation.FavoriteDragonBallFragment"
+        android:label="Favorites">
+        <action
+            android:id="@+id/action_dragonBallListFragment_to_dragonBall_detail_fragment"
+            app:destination="@+id/dragonball_details_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/dragonball_favorites_fragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/dragonball_details_fragment"
+        android:name="com.jaimegc.dragonballmodularization.features.dragonball_details.presentation.DragonBallDetailsFragment">
+        <argument
+            android:name="dragonball_id"
+            app:argType="long" />
+        <deepLink
+            app:uri="dragonBall://dragonball_details/{dragonball_id}" />
+    </fragment>
+</navigation>

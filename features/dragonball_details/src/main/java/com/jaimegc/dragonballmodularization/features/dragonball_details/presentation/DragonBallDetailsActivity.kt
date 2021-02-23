@@ -1,13 +1,11 @@
 package com.jaimegc.dragonballmodularization.features.dragonball_details.presentation
 
-import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.asLiveData
-import androidx.palette.graphics.Palette
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
@@ -33,6 +31,8 @@ class DragonBallDetailsActivity : BaseActivity<ActivityDragonballDetailsBinding>
     override fun setup() {
         attachActions()
 
+        title = getString(R.string.toolbar_details_title)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         bindViewModels(intent.extras?.getLong(ActionKeys.DRAGONBALL_ID_KEY))
     }
 
@@ -121,21 +121,6 @@ class DragonBallDetailsActivity : BaseActivity<ActivityDragonballDetailsBinding>
                     dataSource: DataSource?,
                     isFirstResource: Boolean
                 ): Boolean {
-                    resource?.let { bitmap ->
-                        Palette.from(bitmap).generate {
-                            // Use the dominant color in image
-                            val dominantColor =
-                                it?.getMutedColor(
-                                    ContextCompat.getColor(
-                                        this@DragonBallDetailsActivity,
-                                        R.color.white
-                                    )
-                                )
-                                    ?: 0x000
-                            binding.ivBackground.backgroundTintList =
-                                ColorStateList.valueOf(dominantColor)
-                        }
-                    }
                     return false
                 }
             }).into(binding.ivDragonBallPic)
@@ -145,5 +130,15 @@ class DragonBallDetailsActivity : BaseActivity<ActivityDragonballDetailsBinding>
         R.drawable.iv_selected_fav
     } else {
         R.drawable.ic_unselected_fav_24
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

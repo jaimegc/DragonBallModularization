@@ -8,6 +8,7 @@ import com.jaimegc.dragonballmodularization.libraries.base.data.DragonBallInfo
 data class DragonBallInfoEntity(
     @PrimaryKey
     val id: Long,
+    val startDate: String,
     val data: DragonBallInfo,
     var isFav: Boolean = false
 )
