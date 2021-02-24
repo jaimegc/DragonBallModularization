@@ -185,7 +185,6 @@ object Modules {
 }
 
 fun DependencyHandler.gradle() {
-    classpath(Dependencies.GRADLE_ANDROID_JUNIT5)
     classpath(Dependencies.GRADLE_ANDROID_TOOLS)
     classpath(Dependencies.GRADLE_KOTLIN_PLUGIN)
     classpath(Dependencies.GRADLE_KOTLIN_SERIALIZATION)
