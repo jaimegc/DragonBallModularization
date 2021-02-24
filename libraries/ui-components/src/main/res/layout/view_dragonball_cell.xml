@@ -5,9 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
     app:cardCornerRadius="5dp"
-    app:cardElevation="5dp"
-    app:cardBackgroundColor="@android:color/transparent">
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@android:color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -21,7 +24,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@drawable/dragonball_test" />
 
         <TextView
             android:id="@+id/tvDragonBallTitle"
@@ -29,15 +32,96 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:maxLines="4"
             android:ellipsize="end"
             android:textStyle="bold"
-            android:fontFamily="@font/rubik"
+            android:fontFamily="@font/rubik_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivDragonBallPic"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Dragon Ball Z" />
+
+        <TextView
+            android:id="@+id/tvDragonBallDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/saiyan"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvDragonBallEpisodes"
+            app:layout_constraintStart_toEndOf="@+id/ivDragonBallPic"
+            tools:text="Date" />
+
+        <TextView
+            android:id="@+id/tvDragonBallDateValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_regular"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvDragonBallDate"
+            app:layout_constraintStart_toEndOf="@+id/tvDragonBallDate"
+            tools:text="1990/01/01" />
+
+        <TextView
+            android:id="@+id/tvDragonBallEpisodes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/saiyan"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textAllCaps="true"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvDragonBallScore"
+            app:layout_constraintStart_toEndOf="@+id/ivDragonBallPic"
+            tools:text="Episodes" />
+
+        <TextView
+            android:id="@+id/tvDragonBallEpisodesValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_regular"
+            android:textAllCaps="true"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvDragonBallEpisodes"
+            app:layout_constraintStart_toEndOf="@+id/tvDragonBallEpisodes"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/tvDragonBallScore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/saiyan"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textAllCaps="true"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivDragonBallPic"
+            tools:text="Score" />
+
+        <TextView
+            android:id="@+id/tvDragonBallScoreValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_regular"
+            android:textAllCaps="true"
+            android:textColor="@color/purple_500"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvDragonBallScore"
+            app:layout_constraintStart_toEndOf="@+id/tvDragonBallScore"
+            tools:text="5.0" />
 
         <TextView
             android:id="@+id/tvDragonBallType"
@@ -45,12 +129,12 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/saiyan"
             android:padding="10dp"
+            android:gravity="end"
             android:textAllCaps="true"
             android:textColor="@color/teal_700"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivDragonBallPic"
             tools:text="TV" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

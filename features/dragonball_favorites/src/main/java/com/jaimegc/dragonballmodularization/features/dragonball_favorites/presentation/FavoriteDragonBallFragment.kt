@@ -4,7 +4,6 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.asLiveData
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.jaimegc.dragonballmodularization.features.dragonball_favorites.R
@@ -38,7 +37,7 @@ class FavoriteDragonBallFragment : BaseFragment<FragmentFavoriteDragonballBindin
 
     override fun setup() {
         with(binding.rvDragonBall) {
-            layoutManager = GridLayoutManager(activity, 2)
+            layoutManager = GridLayoutManager(activity, 1)
             adapter = dragonBallAdapter
         }
 

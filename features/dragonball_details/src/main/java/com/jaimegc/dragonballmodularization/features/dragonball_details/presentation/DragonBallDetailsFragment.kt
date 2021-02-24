@@ -1,6 +1,7 @@
 package com.jaimegc.dragonballmodularization.features.dragonball_details.presentation
 
 import android.graphics.Bitmap
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -8,13 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.jaimegc.dragonballmodularization.features.dragonball_details.R
-import com.jaimegc.dragonballmodularization.features.dragonball_details.databinding.ActivityDragonballDetailsBinding
+import com.jaimegc.dragonballmodularization.features.dragonball_details.databinding.FragmentDragonballDetailsBinding
 import com.jaimegc.dragonballmodularization.libraries.base.data.DragonBallInfo
 import com.jaimegc.dragonballmodularization.libraries.base.data.Resource
 import com.jaimegc.dragonballmodularization.libraries.base.ui.BaseFragment
@@ -23,14 +25,15 @@ import com.jaimegc.dragonballmodularization.libraries.ui_components.util.gone
 import com.jaimegc.dragonballmodularization.libraries.ui_components.util.showErrorDialog
 import com.jaimegc.dragonballmodularization.libraries.ui_components.util.visible
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.util.*
 
-class DragonBallDetailsFragment : BaseFragment<ActivityDragonballDetailsBinding>() {
+class DragonBallDetailsFragment : BaseFragment<FragmentDragonballDetailsBinding>() {
 
     private val dragonBallDetailsViewModel: DragonBallDetailsViewModel by viewModel()
     private val args: DragonBallDetailsFragmentArgs by navArgs()
 
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ActivityDragonballDetailsBinding
-        get() = ActivityDragonballDetailsBinding::inflate
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentDragonballDetailsBinding
+        get() = FragmentDragonballDetailsBinding::inflate
 
     override fun setup() {
         attachActions()
@@ -44,10 +47,6 @@ class DragonBallDetailsFragment : BaseFragment<ActivityDragonballDetailsBinding>
     }
 
     private fun attachActions() {
-        binding.btnBack.setOnClickListener {
-            //context.finish()
-        }
-
         binding.btnFav.setOnClickListener { favBtnView ->
             handleFavAction(favBtnView)
         }
@@ -61,7 +60,6 @@ class DragonBallDetailsFragment : BaseFragment<ActivityDragonballDetailsBinding>
                 }
                 is Resource.Success -> {
                     binding.progress.gone()
-                    binding.viewsGroup.visible()
 
                     it.data?.let { dragonBallInfo ->
                         fillDragonBallDetails(dragonBallInfo)
@@ -85,10 +83,30 @@ class DragonBallDetailsFragment : BaseFragment<ActivityDragonballDetailsBinding>
     private fun fillDragonBallDetails(dragonBallInfo: DragonBallInfo) {
         with(binding) {
             configDragonBallImage(dragonBallInfo.imageUrl)
-            tvDragonBallName.text = dragonBallInfo.title
-            tvRoleType.text = dragonBallInfo.type
+            tvDragonBallTitle.text = dragonBallInfo.title
+            tvDragonBallSynopsis.text = dragonBallInfo.synopsis
+            tvDragonBallType.text = dragonBallInfo.type
+            tvDragonBallDate.text =
+                getString(com.jaimegc.dragonballmodularization.libraries.ui_components.R.string.date)
+            tvDragonBallEpisodes.text =
+                getString(com.jaimegc.dragonballmodularization.libraries.ui_components.R.string.episodes)
+            tvDragonBallScore.text =
+                getString(com.jaimegc.dragonballmodularization.libraries.ui_components.R.string.score)
+            tvDragonBallDateValue.text =
+                dragonBallInfo.startDate.substring(0, 10).replace("-", "/")
+            tvDragonBallEpisodesValue.text = if (dragonBallInfo.episodes != 0) {
+                dragonBallInfo.episodes.toString()
+            } else {
+                if (dragonBallInfo.title.toLowerCase(Locale.ROOT) == "super dragon ball heroes") {
+                    "33"
+                } else {
+                    "??"
+                }
+            }
+            tvDragonBallScoreValue.text = getString(
+                com.jaimegc.dragonballmodularization.libraries.ui_components.R.string.score_value, dragonBallInfo.score
+            )
             btnFav.setImageResource(dragonBallInfo.isFav.getFavoriteImage())
-            tvBiographyText.text = dragonBallInfo.rated
         }
     }
 
@@ -159,5 +177,10 @@ class DragonBallDetailsFragment : BaseFragment<ActivityDragonballDetailsBinding>
         super.onResume()
         activity?.title = getString(R.string.toolbar_details_title)
         (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        context?.let { ctx ->
+            val backArrow = ContextCompat.getDrawable(ctx, R.drawable.abc_ic_ab_back_material)
+            backArrow?.setColorFilter(ContextCompat.getColor(ctx, R.color.red), PorterDuff.Mode.SRC_ATOP)
+            (activity as? AppCompatActivity)?.supportActionBar?.setHomeAsUpIndicator(backArrow)
+        }
     }
 }

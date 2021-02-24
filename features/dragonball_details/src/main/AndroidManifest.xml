@@ -4,8 +4,7 @@
 
     <application>
         <activity
-            android:name=".presentation.DragonBallDetailsActivity"
-            android:screenOrientation="portrait">
+            android:name=".presentation.DragonBallDetailsActivity">
             <intent-filter>
                 <action android:name="com.dragonballmodularization.features.dragonball_details.navigate"/>
                 <category android:name="android.intent.category.DEFAULT" />

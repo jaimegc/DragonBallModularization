@@ -8,7 +8,8 @@ class DragonBallListRemoteSourceImpl(
 ) : DragonBallListRemoteSource {
     override suspend fun getDragonBall(): List<DragonBallInfo> =
         dragonBallApi.getDragonBall().results.filter {
-            it.title.toLowerCase(Locale.ROOT).contains("dragon ball")
+            it.title.toLowerCase(Locale.ROOT).contains("dragon ball") &&
+                it.title.toLowerCase(Locale.ROOT).contains("4-d").not()
         }.sortedByDescending {
             it.startDate
         }
