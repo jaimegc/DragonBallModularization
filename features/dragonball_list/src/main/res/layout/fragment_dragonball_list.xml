@@ -3,22 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.DragonBallListFragment">
+    tools:context=".presentation.DragonBallListFragment"
+    android:background="#EEE">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDragonBallList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        tools:itemCount="2"
-        tools:listitem="@layout/item_dragonball_cell" />
+        android:layout_height="match_parent"
+        tools:itemCount="4"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        tools:listitem="@layout/view_dragonball_cell" />
 
     <ProgressBar
         android:id="@+id/progressView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:indeterminateTint="@color/orange_700"
         android:visibility="gone"
         tools:visibility="visible" />
 
