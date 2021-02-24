@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@color/blue_grey_900"
+    android:background="#EEE"
     tools:context=".presentation.FavoriteDragonBallFragment">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/no_favorites_added_str"
-        android:textColor="@color/white"
+        android:textColor="@color/red"
         android:textSize="28sp"
         android:textStyle="bold"
         android:visibility="gone"
@@ -24,12 +24,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDragonBall"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:visibility="gone"
         tools:visibility="visible"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        tools:itemCount="4"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        tools:listitem="@layout/view_dragonball_cell"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,6 +40,7 @@
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:indeterminateTint="@color/orange_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
