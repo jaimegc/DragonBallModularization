@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.jaimegc.dragonballmodularization.features.dragonball_favorites.R
 import com.jaimegc.dragonballmodularization.features.dragonball_favorites.databinding.FragmentFavoriteDragonballBinding
 import com.jaimegc.dragonballmodularization.libraries.base.data.DragonBallInfo
 import com.jaimegc.dragonballmodularization.libraries.base.data.Resource
@@ -69,7 +68,9 @@ class FavoriteDragonBallFragment : BaseFragment<FragmentFavoriteDragonballBindin
                 is Resource.Failure -> {
                     binding.progress.gone()
                     requireContext().showErrorDialog(
-                        it.failureData.message ?: getString(R.string.generic_error)
+                        it.failureData.message ?: getString(
+                            com.jaimegc.dragonballmodularization.libraries.local.R.string.generic_error
+                        )
                     )
                 }
                 is Resource.None -> { }

@@ -4,7 +4,8 @@
 
     <application>
         <activity
-            android:name=".presentation.DragonBallDetailsActivity">
+            android:name=".presentation.DragonBallDetailsActivity"
+            android:theme="@style/Theme.DragonBallModularization">
             <intent-filter>
                 <action android:name="com.dragonballmodularization.features.dragonball_details.navigate"/>
                 <category android:name="android.intent.category.DEFAULT" />
