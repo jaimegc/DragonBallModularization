@@ -54,7 +54,6 @@ dependencies {
     implementation(Dependencies.ANDROID_MATERIAL)
     implementation(Dependencies.ANDROID_NAVIGATION_FRAGMENT_KTX)
     implementation(Dependencies.ANDROID_NAVIGATION_UI_KTX)
-    implementation(Dependencies.ANDROID_PALETTE)
     implementation(Dependencies.GLIDE)
     implementation(Dependencies.GLIDE_OK_HTTP)
 
