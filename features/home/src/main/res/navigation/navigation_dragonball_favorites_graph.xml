@@ -5,6 +5,8 @@
     android:id="@+id/navigation_dragonball_favorites_graph"
     app:startDestination="@+id/dragonball_favorites_fragment"
     tools:ignore="UnusedNavigation">
+    <!-- Fragments are red due to this:
+        https://github.com/android/architecture-components-samples/issues/663#issuecomment-505829674 -->
     <fragment
         android:id="@+id/dragonball_favorites_fragment"
         android:name="com.jaimegc.dragonballmodularization.features.dragonball_favorites.presentation.FavoriteDragonBallFragment"
