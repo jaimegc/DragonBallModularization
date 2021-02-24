@@ -1,10 +1,12 @@
 package com.jaimegc.dragonballmodularization.features.dragonball_details.presentation
 
 import android.graphics.Bitmap
+import android.graphics.PorterDuff
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.asLiveData
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
@@ -20,6 +22,7 @@ import com.jaimegc.dragonballmodularization.libraries.ui_components.util.gone
 import com.jaimegc.dragonballmodularization.libraries.ui_components.util.showErrorDialog
 import com.jaimegc.dragonballmodularization.libraries.ui_components.util.visible
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.util.*
 
 class DragonBallDetailsActivity : BaseActivity<ActivityDragonballDetailsBinding>() {
 
@@ -33,14 +36,13 @@ class DragonBallDetailsActivity : BaseActivity<ActivityDragonballDetailsBinding>
 
         title = getString(R.string.toolbar_details_title)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val backArrow = ContextCompat.getDrawable(this, R.drawable.abc_ic_ab_back_material)
+        backArrow?.setColorFilter(ContextCompat.getColor(this, R.color.red), PorterDuff.Mode.SRC_ATOP)
+        supportActionBar?.setHomeAsUpIndicator(backArrow)
         bindViewModels(intent.extras?.getLong(ActionKeys.DRAGONBALL_ID_KEY))
     }
 
     private fun attachActions() {
-        binding.btnBack.setOnClickListener {
-            finish()
-        }
-
         binding.btnFav.setOnClickListener { favBtnView ->
             handleFavAction(favBtnView)
         }
@@ -54,7 +56,6 @@ class DragonBallDetailsActivity : BaseActivity<ActivityDragonballDetailsBinding>
                 }
                 is Resource.Success -> {
                     binding.progress.gone()
-                    binding.viewsGroup.visible()
 
                     it.data?.let { dragonBallInfo ->
                         fillDragonBallDetails(dragonBallInfo)
@@ -78,10 +79,30 @@ class DragonBallDetailsActivity : BaseActivity<ActivityDragonballDetailsBinding>
     private fun fillDragonBallDetails(dragonBallInfo: DragonBallInfo) {
         with(binding) {
             configDragonBallImage(dragonBallInfo.imageUrl)
-            tvDragonBallName.text = dragonBallInfo.title
-            tvRoleType.text = dragonBallInfo.type
+            tvDragonBallTitle.text = dragonBallInfo.title
+            tvDragonBallSynopsis.text = dragonBallInfo.synopsis
+            tvDragonBallType.text = dragonBallInfo.type
+            tvDragonBallDate.text =
+                getString(com.jaimegc.dragonballmodularization.libraries.ui_components.R.string.date)
+            tvDragonBallEpisodes.text =
+                getString(com.jaimegc.dragonballmodularization.libraries.ui_components.R.string.episodes)
+            tvDragonBallScore.text =
+                getString(com.jaimegc.dragonballmodularization.libraries.ui_components.R.string.score)
+            tvDragonBallDateValue.text =
+                dragonBallInfo.startDate.substring(0, 10).replace("-", "/")
+            tvDragonBallEpisodesValue.text = if (dragonBallInfo.episodes != 0) {
+                dragonBallInfo.episodes.toString()
+            } else {
+                if (dragonBallInfo.title.toLowerCase(Locale.ROOT) == "super dragon ball heroes") {
+                    "33"
+                } else {
+                    "??"
+                }
+            }
+            tvDragonBallScoreValue.text = getString(
+                com.jaimegc.dragonballmodularization.libraries.ui_components.R.string.score_value, dragonBallInfo.score
+            )
             btnFav.setImageResource(dragonBallInfo.isFav.getFavoriteImage())
-            tvBiographyText.text = dragonBallInfo.rated
         }
     }
 
