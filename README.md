@@ -2,7 +2,7 @@
 <h1 align="center">DragonBall Modularization</h1>
 
 <p align="center">
-  <img src="./art/logo.jpg" height="200"/>
+  <img src="./art/logo.jpg" height="350"/>
 </p>
 
 <br />
@@ -34,8 +34,8 @@ DragonBall Modularization is a sample Android application focused on...
 <b>List & Favorites</b>
 
 <p align="left">
-  <img src="./art/home_list.jpg" width="300">
-  <img src="./art/home_favorites.jpg" width="300">
+  <img src="./art/home_list.jpg" width="350">
+  <img src="./art/home_favorites.jpg" width="350">
 </p>
 
 ### Details
@@ -43,8 +43,8 @@ DragonBall Modularization is a sample Android application focused on...
 <b>Activity (from List screen) & Fragment (from Favorites screen)</b>
 
 <p align="left">
-  <img src="./art/list_details.jpg" width="300">
-  <img src="./art/favorites_details.jpg" width="300">
+  <img src="./art/list_details.jpg" width="350">
+  <img src="./art/favorites_details.jpg" width="350">
 </p>
 
 ## Credits
@@ -54,7 +54,7 @@ DragonBall Modularization is a sample Android application focused on...
 - [Jeroen Mols](https://twitter.com/molsjeroen) for the inspiration to start this project. His articles about modularization are amazing.
   - [Modularization Example](https://github.com/JeroenMols/ModularizationExample) is the modularization approach of this project.
   - [Blog (5 parts)](https://jeroenmols.com/blog/2019/03/06/modularizationwhy/) I have copied many paragraphs of these articles for this README.
-- [Valorant-Agent Project](https://github.com/AhmedVargos/Valorant-Agents) for being the base of this project. The base code is the same but using a new modularization approach, API, design navigation components, etc.
+- [Valorant-Agent Project](https://github.com/AhmedVargos/Valorant-Agents) for being the base of this project. The base code is the same but using a new modularization approach, API, design, navigation components, etc.
 - [Jikan Apiary](https://jikan.docs.apiary.io/) for the open-source API. DragonBall is always welcome :)
 
 ### Thanks
