@@ -16,6 +16,7 @@
     <color name="grey_200">#EEEEEE</color>
     <color name="red">#C10505</color>
     <color name="red_200">#FFCCCB</color>
+    <color name="background">#EEEFFF</color>
     <color name="red_500">#F44336</color>
     <color name="red_500_light">#FF7961</color>
     <color name="blue_grey_800">#19253A</color>
