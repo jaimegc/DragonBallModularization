@@ -125,7 +125,7 @@ Because all features can be started directly using an intent, there is no need f
 ### Modularized Architecture
 
 <p align="left">
-  <img src="./art/modules.jpg" height="500"/>
+  <img src="./art/modules.jpg" width="1000"/>
 </p>
 
 ### Architecture Diagram
