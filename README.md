@@ -9,10 +9,11 @@
 
 ## Introduction
 
-DragonBall Modularization is a sample Android application focused on how to architect/configure a multi-module project. If you are looking for a beautiful design or complex architecture, sorry, this is not your repository. If you want to see many tests, great architecture, huge and complex database and much more, visit [Covid19Tracker repository](https://github.com/jaimegc/Covid19Tracker/).
+DragonBall Modularization is a sample Android application focused on how to architect/configure a multi-module project. If you are looking for a beautiful design or complex architecture, sorry, this is not your repository. If you want to see many tests, great architecture, huge and complex database and much more, visit my [Covid19Tracker repository](https://github.com/jaimegc/Covid19Tracker/).
 
 ## Technical summary
 
+- [Multi-Module](https://jeroenmols.com/blog/2019/03/06/modularizationwhy/): Modularization is incredibly powerful to speed up your builds, simplify development and fundamentally scale your team. On top of that, it enables interesting use cases such as instant apps and makes it easier to experiment with new technologies.
 - [Offline-First](https://applikeysolutions.com/blog/the-offline-first-approach-to-mobile-app-development): The offline-first apps, while still requiring a connection to the servers, don't need a constant internet connection. The data from servers is downloaded to the user's device and can still be accessed offline.
 - [Single Source of Truth (SSOT)](https://developer.android.com/jetpack/docs/guide#truth): It is the practice of structuring information models and associated schemata such that every data element is stored exactly once. You can have an offline app and be sure your data always use one source and that is your database.
 - [Model-View-ViewModel (MVVM)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel): It is a software architectural pattern that facilitates the separation of the development of the graphical user interface (without using [DataBinding](https://developer.android.com/topic/libraries/data-binding)). Also, there are [Screen States](/app/src/main/java/com/jaimegc/covid19tracker/ui/base/states/ScreenStates.kt) to handle the different states in the UI.
@@ -47,6 +48,19 @@ DragonBall Modularization is a sample Android application focused on how to arch
   <img src="./art/favorites_details.jpg" width="350">
 </p>
 
+## Modularization: A bit of [theory](https://jeroenmols.com/blog/2019/03/06/modularizationwhy/)
+
+### Why 
+
+- <b>Speeds up builds</b>. Gradle does two things to speed up builds: Cache work it did before so it doesn’t have to do it again. Try to do as much work as possible in parallel.
+- <b>Enable on demand delivery</b>. [On demand delivery](https://developer.android.com/studio/projects/dynamic-delivery) allows to ship a smaller app with fewer features and download new features on the fly when the user starts accessing those. [Instant apps](https://developer.android.com/topic/google-play-instant/) allow users to run apps without installing them.
+- <b>Simplify development</b>. In a modularized world you could still have spaghetti (within modules), but at least it would be multiple smaller, easily digestible portions.
+- <b>Reuse modules across apps</b>. Should your business be successful, you have a head start launching a second app/product!, maybe someday you want to involve 3rd party developers on your platform and make an SDK, etc.
+- <b>Experiment with new technologies</b>. What if you just contain the new tech/architecture to a single module? That makes integrating the technology a lot easier and you can experience the full benefits of the technology by converting an entire module end to end.
+- <b>Scale development teams</b>. if you split your app in a smart way, you can delegate the ownership of particular feature modules to particular teams/people. Completely avoiding concurrent modifications, or at least limiting those problems to a smaller set of modules.
+- <b>Enables refactoring</b>. You want to refactor or rebuilt all functionality behind a feature toggle, so you can first verify that everything works (at least on par) before rolling it out to everyone. Risk reduction like this is key. With the right split you can at least solve this problem for some use cases.
+- <b>Simplifies test automation</b>. It can enable the flow to be tested without having to step through other parts of the app. This speeds up tests, simplifies test setup and increases their reliability.
+
 ## Credits
 
 ### Special thanks
@@ -77,7 +91,7 @@ DragonBall Modularization is a sample Android application focused on how to arch
 If you want to contribute to this app, you're always welcome!
 See [Contributing Guidelines](CONTRIBUTING.md). 
 
-You can improve the code, adding screenshot tests, themes, compose, modularization, etc.
+You can improve the code, adding tests, themes, compose, etc.
 
 ## Author
 
