@@ -61,6 +61,65 @@ DragonBall Modularization is a sample Android application focused on how to arch
 - <b>Enables refactoring</b>. You want to refactor or rebuilt all functionality behind a feature toggle, so you can first verify that everything works (at least on par) before rolling it out to everyone. Risk reduction like this is key. With the right split you can at least solve this problem for some use cases.
 - <b>Simplifies test automation</b>. It can enable the flow to be tested without having to step through other parts of the app. This speeds up tests, simplifies test setup and increases their reliability.
 
+### Modularized Architecture
+
+<p align="left">
+  <img src="./art/all_modules.png" height="150"/>
+</p>
+
+This architecture basically splits an app into three levels of modules:
+  - App: links together features modules (usually only one).
+  - Features: self-contained, full-screen UI level features that include Espresso tests. Feature modules <b>never</b> directly depend on each other.
+  - Libraries: functionality shared across multiple features. Different libraries can depend on each other.
+
+### App Module
+
+<p align="left">
+  <img src="./art/app_module.png" height="150"/>
+</p>
+
+App module orchestrates the navigation from between features. It uses feature toggles to determine what should be enabled and what not.
+  - Android application.
+  - Link all the modules together.
+  - Depends on other features and libraries.
+
+### Feature Modules
+
+<p align="left">
+  <img src="./art/feature_modules.png" height="150"/>
+</p>
+
+Probably the most important modules are feature modules. These have the following characteristics:
+  - Android library module.
+  - Respond to implicit intents and pass back a result.
+  - Never depend on other features or app.
+  - depend on several library modules.
+
+### Library Modules
+
+<p align="left">
+  <img src="./art/library_modules.png" height="150"/>
+</p>
+
+Libraries provide shared plumbing that is reused across several or all features. Their characteristics are:
+  - Android library, pure Java or Kotlin module.
+  - Never depend on features or app.
+  - Can (but don't have to) depend on other libraries.
+
+### Navigation
+
+The first key benefit is that feature modules make navigation within an app significantly easier. This is because they split the navigation problem into smaller parts:
+  - Navigation within a feature -> handled by the feature itself.
+  - Navigation between features -> handled by the app module.
+
+### Scaling
+
+Making features independent like this completely decouples their implementations. Hence eliminating merge conflicts across different feature teams by design! Experimenting with new technologies also becomes a lot easier: you can easily benefit from new tech end to end within a single feature.
+
+### Testing
+
+Because all features can be started directly using an intent, there is no need for Espresso to step through other parts of the app to arrive at the feature to test. This not only makes tests simpler and faster, but fewer steps also make them more reliable and tests can no longer break due to bugs in other features!
+
 ## Credits
 
 ### Special thanks
