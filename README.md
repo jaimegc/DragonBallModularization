@@ -66,6 +66,7 @@ DragonBall Modularization is a sample Android application focused on how to arch
   * [Using the Navigation Component in a Modular World](https://medium.com/swlh/using-the-navigation-component-in-a-modular-world-e7578825962)
   * [7+1 tips about Android App Modularization](https://speakerdeck.com/prof18/7-plus-1-tips-about-android-app-modularization-droidcon-americas)
   * [Build a Modular Android App Architecture](https://proandroiddev.com/build-a-modular-android-app-architecture-25342d99de82)
+  * [Patchwork Plaid — A modularization story](https://medium.com/androiddevelopers/a-patchwork-plaid-monolith-to-modularized-app-60235d9f212e)
 - Icons & Images:
   * [Launcher & Splash](https://toppng.com/toyotaro-continuar%C3%A1-la-historia-de-dragon-ball-super-dragon-ball-super-PNG-free-PNG-Images_231124)
   * [Jeroen Mols Blog](https://jeroenmols.com/blog/2019/03/18/modularizationarchitecture/)
