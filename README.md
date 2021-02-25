@@ -120,10 +120,18 @@ Making features independent like this completely decouples their implementations
 
 Because all features can be started directly using an intent, there is no need for Espresso to step through other parts of the app to arrive at the feature to test. This not only makes tests simpler and faster, but fewer steps also make them more reliable and tests can no longer break due to bugs in other features!
 
-### DragonBall Modularized Architecture
+## DragonBall Modularization
+
+### Modularized Architecture
 
 <p align="left">
   <img src="./art/modules.jpg" height="500"/>
+</p>
+
+### Architecture Diagram
+
+<p align="left">
+  <img src="./art/architecture_diagram.jpg" width="500"/>
 </p>
 
 ## Credits
