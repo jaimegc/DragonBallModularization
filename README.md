@@ -9,7 +9,7 @@
 
 ## Introduction
 
-DragonBall Modularization is a sample Android application focused on how to architect/configure a multi-module project. If you are looking for a beautiful design or complex architecture, sorry, this is not your repository. If you want to see many tests, great architecture, huge and complex database and much more, visit my [Covid19Tracker repository](https://github.com/jaimegc/Covid19Tracker/).
+DragonBall Modularization is a sample Android application focused on how to architect/configure a multi-module project. If you are looking for a beautiful design or complex architecture, sorry, this is not your repository. If you want to see many tests, great architecture, github actions, huge and complex database and much more, visit my [Covid19Tracker repository](https://github.com/jaimegc/Covid19Tracker/).
 
 ## Technical summary
 
@@ -119,6 +119,12 @@ Making features independent like this completely decouples their implementations
 ### Testing
 
 Because all features can be started directly using an intent, there is no need for Espresso to step through other parts of the app to arrive at the feature to test. This not only makes tests simpler and faster, but fewer steps also make them more reliable and tests can no longer break due to bugs in other features!
+
+### DragonBall Modularized Architecture
+
+<p align="left">
+  <img src="./art/modules.jpg" height="500"/>
+</p>
 
 ## Credits
 
