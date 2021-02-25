@@ -26,6 +26,7 @@ DragonBall Modularization is a sample Android application focused on how to arch
 - [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/): A cold asynchronous data stream that sequentially emits values and completes normally or with an exception.
 - [StateFlow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/): A SharedFlow that represents a read-only state with a single updatable data value that emits updates to the value to its collectors. A state flow is a hot flow because its active instance exists independently of the presence of collectors.
 - [Kotlin Gradle DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html): Gradle's Kotlin DSL provides an alternative syntax to the traditional Groovy DSL with an enhanced editing experience in supported IDEs, with superior content assist, refactoring, documentation, and more.
+- [Koin](https://start.insert-koin.io/): Dependency Injection Framework (Kotlin).
 - [Moshi](https://github.com/square/moshi): A modern JSON library for Kotlin and Java. The converter uses Moshi for serialization to and from JSON.
 
 ## Screens
