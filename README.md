@@ -9,7 +9,7 @@
 
 ## Introduction
 
-DragonBall Modularization is a sample Android application focused on...
+DragonBall Modularization is a sample Android application focused on how to architect/configure a multi-module project. If you are looking for a beautiful design or complex architecture, sorry, this is not your repository. If you want to see many tests, great architecture, huge and complex database and much more, visit [Covid19Tracker repository](https://github.com/jaimegc/Covid19Tracker/).
 
 ## Technical summary
 
@@ -54,7 +54,7 @@ DragonBall Modularization is a sample Android application focused on...
 - [Jeroen Mols](https://twitter.com/molsjeroen) for the inspiration to start this project. His articles about modularization are amazing.
   - [Modularization Example](https://github.com/JeroenMols/ModularizationExample) is the modularization approach of this project.
   - [Blog (5 parts)](https://jeroenmols.com/blog/2019/03/06/modularizationwhy/) I have copied many paragraphs of these articles for this README.
-- [Valorant-Agent Project](https://github.com/AhmedVargos/Valorant-Agents) for being the base of this project. The base code is the same but using a new modularization approach, API, design, navigation components, etc.
+- [Valorant-Agent Project](https://github.com/AhmedVargos/Valorant-Agents) for being the base of this project. The base code is the same but using a new modularization approach, API, design, navigation components, etc. <b>Also, if you want to see how to add tests in a multi-module project, this is your repository!</b>
 - [Jikan Apiary](https://jikan.docs.apiary.io/) for the open-source API. DragonBall is always welcome :)
 
 ### Thanks
