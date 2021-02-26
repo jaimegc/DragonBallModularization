@@ -24,9 +24,8 @@ class DragonBallListRepositoryImpl(
                 localSource.saveDragonBallList(data)
             }
 
-            override suspend fun localFetch(): List<DragonBallInfo> {
-                return localSource.getDragonBall().map { it.toDomain(it.isFav) }
-            }
+            override suspend fun localFetch(): List<DragonBallInfo> =
+                localSource.getDragonBall().map { it.toDomain(it.isFav) }
 
             override fun shouldFetchWithLocalData() = true
         }.asFlow()

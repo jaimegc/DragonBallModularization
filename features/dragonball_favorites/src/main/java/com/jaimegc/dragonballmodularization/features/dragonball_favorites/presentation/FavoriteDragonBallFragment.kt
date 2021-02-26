@@ -61,9 +61,9 @@ class FavoriteDragonBallFragment : BaseFragment<FragmentFavoriteDragonballBindin
                             binding.tvNoFavs.gone()
                             fillViewWithData(dragonBallList)
                         } ?: kotlin.run {
-                        binding.rvDragonBall.gone()
-                        binding.tvNoFavs.visible()
-                    }
+                            binding.rvDragonBall.gone()
+                            binding.tvNoFavs.visible()
+                        }
                 }
                 is Resource.Failure -> {
                     binding.progress.gone()
