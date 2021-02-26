@@ -9,7 +9,7 @@
 
 ## Introduction
 
-DragonBall Modularization is a sample Android application focused on how to architect/configure a multi-module project. If you are looking for a beautiful design or complex architecture, sorry, this is not your repository. If you want to see many tests, great architecture, github actions, huge and complex database and much more, visit my [Covid19Tracker repository](https://github.com/jaimegc/Covid19Tracker/).
+DragonBall Modularization is a sample Android application focused on how to architect/configure a multi-module project. If you are looking for a beautiful design or complex architecture, sorry, this is not your repository. If you want to see a lot of tests, great architecture, github actions, huge and complex database and much more, visit my [Covid19Tracker repository](https://github.com/jaimegc/Covid19Tracker/).
 
 ## Technical summary
 
