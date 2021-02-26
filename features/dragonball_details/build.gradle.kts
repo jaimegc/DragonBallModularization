@@ -49,7 +49,6 @@ dependencies {
     implementation(project(Modules.Libraries.LOCAL))
     implementation(project(Modules.Libraries.NAVIGATOR))
     implementation(project(Modules.Libraries.UI_COMPONENTS))
-    implementation(project(Modules.Libraries.NAVIGATOR))
     implementation(project(Modules.Libraries.REMOTE))
 
     implementation(Dependencies.KOTLIN_JDK)
@@ -59,7 +58,6 @@ dependencies {
     implementation(Dependencies.ANDROID_MATERIAL)
     implementation(Dependencies.ANDROID_NAVIGATION_FRAGMENT_KTX)
     implementation(Dependencies.ANDROID_NAVIGATION_UI_KTX)
-    implementation(Dependencies.ANDROID_PALETTE)
     implementation(Dependencies.COROUTINES_CORE)
     implementation(Dependencies.GLIDE)
     implementation(Dependencies.GLIDE_OK_HTTP)

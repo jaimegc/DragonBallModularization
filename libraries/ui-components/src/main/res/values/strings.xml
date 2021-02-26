@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DragonBall Modularization</string>
+    <string name="episodes">Episodes:</string>
+    <string name="score">Score:</string>
+    <string name="score_value">%.2f</string>
+    <string name="date">Date:</string>
 </resources>

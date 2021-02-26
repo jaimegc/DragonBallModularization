@@ -4,10 +4,8 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.asLiveData
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.jaimegc.dragonballmodularization.features.dragonball_favorites.R
 import com.jaimegc.dragonballmodularization.features.dragonball_favorites.databinding.FragmentFavoriteDragonballBinding
 import com.jaimegc.dragonballmodularization.libraries.base.data.DragonBallInfo
 import com.jaimegc.dragonballmodularization.libraries.base.data.Resource
@@ -38,7 +36,7 @@ class FavoriteDragonBallFragment : BaseFragment<FragmentFavoriteDragonballBindin
 
     override fun setup() {
         with(binding.rvDragonBall) {
-            layoutManager = GridLayoutManager(activity, 2)
+            layoutManager = GridLayoutManager(activity, 1)
             adapter = dragonBallAdapter
         }
 
@@ -63,14 +61,16 @@ class FavoriteDragonBallFragment : BaseFragment<FragmentFavoriteDragonballBindin
                             binding.tvNoFavs.gone()
                             fillViewWithData(dragonBallList)
                         } ?: kotlin.run {
-                        binding.rvDragonBall.gone()
-                        binding.tvNoFavs.visible()
-                    }
+                            binding.rvDragonBall.gone()
+                            binding.tvNoFavs.visible()
+                        }
                 }
                 is Resource.Failure -> {
                     binding.progress.gone()
                     requireContext().showErrorDialog(
-                        it.failureData.message ?: getString(R.string.generic_error)
+                        it.failureData.message ?: getString(
+                            com.jaimegc.dragonballmodularization.libraries.local.R.string.generic_error
+                        )
                     )
                 }
                 is Resource.None -> { }

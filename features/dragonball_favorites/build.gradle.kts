@@ -47,10 +47,7 @@ dependencies {
 
     implementation(project(Modules.Libraries.BASE))
     implementation(project(Modules.Libraries.LOCAL))
-    implementation(project(Modules.Libraries.NAVIGATOR))
     implementation(project(Modules.Libraries.UI_COMPONENTS))
-    implementation(project(Modules.Libraries.NAVIGATOR))
-    implementation(project(Modules.Libraries.REMOTE))
 
     implementation(Dependencies.KOTLIN_JDK)
     implementation(Dependencies.ANDROID_APP_COMPAT)

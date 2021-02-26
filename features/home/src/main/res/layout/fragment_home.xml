@@ -19,6 +19,7 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/orange_500"
         app:itemIconTint="@drawable/sl_navigation"
         app:itemTextColor="@drawable/sl_navigation"
         app:layout_constraintBottom_toBottomOf="parent"
