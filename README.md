@@ -229,6 +229,7 @@ Finally, there are two details screens. From list to details screen is an Activi
 In the first case, we use <i>NavigationActions</i>:
 
 ```kotlin
+// :libraries:navigator module
 object NavigationActions {
     ...
     fun navigateToDragonBallDetailsScreen(context: Context, dragonBallId: Long, noAnimation: Boolean = true): Intent =
@@ -239,6 +240,23 @@ object NavigationActions {
             }
      ...       
 }
+```
+
+```xml
+<!-- :features:dragonball_details Manifest.xml -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jaimegc.dragonballmodularization.features.dragonball_details">
+    <application>
+        <activity
+            android:name=".presentation.DragonBallDetailsActivity"
+            ...>
+            <intent-filter>
+                <action android:name="com.dragonballmodularization.features.dragonball_details.navigate"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
 ```
 
 In the second one, we use the <i>deepLink</i> declared in the previous navigation graph:
@@ -280,6 +298,7 @@ dragonBallCellViewModel.openDragonBallDetails.observe(this) {
 - Icons & Images:
   * [Launcher & Splash](https://toppng.com/toyotaro-continuar%C3%A1-la-historia-de-dragon-ball-super-dragon-ball-super-PNG-free-PNG-Images_231124)
   * [Jeroen Mols Blog](https://jeroenmols.com/blog/2019/03/18/modularizationarchitecture/)
+  * [Architecture Diagram](https://github.com/AhmedVargos/Valorant-Agents/blob/master/screenshots/arch_diagram.jpg)
   * [Marco Gomiero Slides](https://speakerdeck.com/prof18/7-plus-1-tips-about-android-app-modularization-droidcon-americas)
 
 ## Contribute
