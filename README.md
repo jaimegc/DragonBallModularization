@@ -155,7 +155,6 @@ object NavigationActions {
 <!-- :features:home Manifest.xml -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jaimegc.dragonballmodularization.features.home">
-
     <application>
         <activity
             android:name=".presentation.HomeActivity"
@@ -168,6 +167,62 @@ object NavigationActions {
     </application>
 </manifest>
 ```
+
+Also, <b>:features:home</b> has three navigation graphs:
+
+Base screen.
+```xml
+<navigation 
+    ...        
+    app:startDestination="@id/home_fragment">
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.jaimegc.dragonballmodularization.features.home.presentation.HomeFragment"
+        android:label="HomeFragment">
+    </fragment>
+</navigation>
+```
+
+BottomNavigationView has two navigation graphs:
+```xml
+<!-- List Tab -->
+<navigation
+    ...        
+    android:id="@+id/navigation_dragonball_list_graph"
+    app:startDestination="@+id/dragonball_list_fragment">
+    <fragment
+        android:id="@+id/dragonball_list_fragment"
+        android:name="com.jaimegc.dragonballmodularization.features.dragonball_list.presentation.DragonBallListFragment"
+        android:label="List" />
+</navigation>
+
+<!-- Favorites Tab -->
+<navigation 
+    ...
+    android:id="@+id/navigation_dragonball_favorites_graph"
+    app:startDestination="@+id/dragonball_favorites_fragment">
+    <fragment
+        android:id="@+id/dragonball_favorites_fragment"
+        android:name="com.jaimegc.dragonballmodularization.features.dragonball_favorites.presentation.FavoriteDragonBallFragment"
+        android:label="Favorites">
+        <action
+            android:id="@+id/action_dragonBallListFragment_to_dragonBall_detail_fragment"
+            app:destination="@+id/dragonball_details_fragment"
+            .../>
+    </fragment>
+    <fragment
+        android:id="@+id/dragonball_details_fragment"
+        android:name="com.jaimegc.dragonballmodularization.features.dragonball_details.presentation.DragonBallDetailsFragment">
+        <argument
+            android:name="dragonball_id"
+            app:argType="long" />
+        <deepLink
+            app:uri="dragonBall://dragonball_details/{dragonball_id}" />
+    </fragment>
+</navigation>
+```
+
+<b>FavoriteDragonBallFragment</b> and <b>DragonBallDetailsFragment</b> classes will be in highlighted red. This is due to both fragments are in other modules. There is no problem because the project will compile correctly. You can see this [issue](https://github.com/android/architecture-components-samples/issues/663) for more information.
 
 ### Architecture Diagram
 
