@@ -224,6 +224,33 @@ BottomNavigationView has two navigation graphs:
 
 <b>FavoriteDragonBallFragment</b> and <b>DragonBallDetailsFragment</b> classes will be in highlighted red. This is due to both fragments are in other modules. There is no problem because the project will compile correctly. You can see this [issue](https://github.com/android/architecture-components-samples/issues/663) for more information.
 
+Finally, there are two details screens. From list to details screen is an Activity and from favorites screen is a Fragment.
+
+In the first case, we use <i>NavigationActions</i>:
+
+```kotlin
+object NavigationActions {
+    ...
+    fun navigateToDragonBallDetailsScreen(context: Context, dragonBallId: Long, noAnimation: Boolean = true): Intent =
+        internalIntent(context, "com.dragonballmodularization.features.dragonball_details.navigate", noAnimation)
+            .apply { putExtra(DRAGONBALL_ID_KEY, dragonBallId) }
+            .also {
+                navigate(context, it)
+            }
+     ...       
+}
+```
+
+In the second one, we use the <i>deepLink</i> declared in the previous navigation graph:
+
+```kotlin
+dragonBallCellViewModel.openDragonBallDetails.observe(this) {
+    findNavController().navigateUriWithDefaultOptions(
+        Uri.parse("dragonBall://dragonball_details/${it.id}"),
+    )
+}
+```
+
 ### Architecture Diagram
 
 <p align="left">
