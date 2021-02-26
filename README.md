@@ -1,5 +1,5 @@
 
-<h1 align="center">DragonBall Modularization</h1>
+<h1 align="center">DragonBall Modularization <img src="./features/home/src/main/res/mipmap-xxxhdpi/ic_launcher.png" height="100"/></h1>
 
 <p align="center">
   <img src="./art/logo.jpg" height="350"/>
@@ -121,7 +121,7 @@ Making features independent like this completely decouples their implementations
 
 Because all features can be started directly using an intent, there is no need for Espresso to step through other parts of the app to arrive at the feature to test. This not only makes tests simpler and faster, but fewer steps also make them more reliable and tests can no longer break due to bugs in other features!
 
-## DragonBall Modularization
+## DragonBall Modularization <img src="./features/home/src/main/res/mipmap-xxxhdpi/ic_launcher.png" height="60"/>
 
 ### Modularized Architecture
 
