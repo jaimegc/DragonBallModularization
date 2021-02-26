@@ -129,6 +129,46 @@ Because all features can be started directly using an intent, there is no need f
   <img src="./art/modules.jpg" width="1000"/>
 </p>
 
+Summarizing, <b>app module</b> launches the <b>:features:home</b> using the <i>NavigationActions</i> object from the <b>:libraries:navigator</b>.
+
+```kotlin
+// app module
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        ...
+        startActivity(NavigationActions.navigateToHomeScreen(this@MainActivity))
+    }
+}
+
+// :libraries:navigator module
+object NavigationActions {
+    fun navigateToHomeScreen(context: Context, noAnimation: Boolean = true): Intent =
+        internalIntent(context, "com.dragonballmodularization.features.home.navigate", noAnimation).also {
+            navigate(context, it)
+        }
+    }
+    ...
+}    
+```
+
+```xml
+<!-- :features:home Manifest.xml -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jaimegc.dragonballmodularization.features.home">
+
+    <application>
+        <activity
+            android:name=".presentation.HomeActivity"
+            ...>
+            <intent-filter>
+                <action android:name="com.dragonballmodularization.features.home.navigate"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
+```
+
 ### Architecture Diagram
 
 <p align="left">
